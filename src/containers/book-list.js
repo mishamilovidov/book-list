@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 
 class BookList extends Component {
   renderList() {
-    return this.prop.books.map((book) => {
+    return this.props.books.map((book) => {
       return (
         <li key={book.title} className="list-group-item">{book.title}</li>
       )
-    })
+    });
   }
 
   render() {
@@ -15,12 +15,12 @@ class BookList extends Component {
       <ul className="list-group col-sm-4">
         {this.renderList()}
       </ul>
-    )
+    );
   }
 }
 
 function mapStateToProps(state) {
-  // whatever is returned will show up as props instead BookList
+  // whatever is returned will show up as props inside BookList
   return {
     books: state.books
   };
